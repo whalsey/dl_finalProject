@@ -11,12 +11,14 @@ from keras.layers import Dense, Dropout, Activation, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 import os
 
+save_dir = os.path.join('models', 'saved_models')
+
 batch_size = 32
 num_classes = 10
 epochs = 100
 data_augmentation = True
 num_predictions = 20
-save_dir = os.path.join(os.getcwd(), 'saved_models')
+
 model_name = 'keras_cifar10_trained_model.h5'
 
 # The data, split between train and test sets:

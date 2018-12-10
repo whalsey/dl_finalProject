@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c80e7a31-5d8d-48a2-81e7-7d5b071739ee" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/trial1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trial2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trial4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/._masterscript.sh" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_project.py" beforeDir="false" afterPath="$PROJECT_DIR$/trial3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cifar-10-baseline.py" beforeDir="false" afterPath="$PROJECT_DIR$/cifar-10-baseline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/._generator.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/._keras_cifar10_trained_model.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/._latent1.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/._latent2.h5" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,8 +46,8 @@
       <file leaf-file-name="cifar-10-baseline.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cifar-10-baseline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+            <state relative-caret-position="57">
+              <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
               <folding>
                 <element signature="e#192#229#0" expanded="true" />
               </folding>
@@ -53,11 +55,25 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="trial1_out.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trial1_out.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-405433" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="trial3_out.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trial3_out.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-455404" />
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="trial1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trial1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-779">
-              <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+            <state relative-caret-position="242">
+              <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
               <folding>
                 <element signature="e#192#229#0" expanded="true" />
               </folding>
@@ -81,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/trial3.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-745">
-              <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-end-line="21" selection-end-column="49" />
+              <caret line="21" column="49" selection-start-line="21" selection-end-line="21" selection-end-column="49" />
               <folding>
                 <element signature="e#192#229#0" expanded="true" />
               </folding>
@@ -93,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/trial4.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-736">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#192#229#0" expanded="true" />
               </folding>
@@ -116,13 +132,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cifar-10-baseline.py" />
         <option value="$PROJECT_DIR$/mnist_classifier.py" />
         <option value="$PROJECT_DIR$/mnist_generator.py" />
         <option value="$PROJECT_DIR$/final_project.py" />
         <option value="$PROJECT_DIR$/trial1.py" />
         <option value="$PROJECT_DIR$/trial2.py" />
         <option value="$PROJECT_DIR$/trial4.py" />
+        <option value="$PROJECT_DIR$/cifar-10-baseline.py" />
       </list>
     </option>
   </component>
@@ -191,7 +207,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32948717" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -230,7 +246,7 @@
     <entry file="file://$PROJECT_DIR$/trial4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-736">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#192#229#0" expanded="true" />
           </folding>
@@ -240,7 +256,7 @@
     <entry file="file://$PROJECT_DIR$/trial3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-745">
-          <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-end-line="21" selection-end-column="49" />
+          <caret line="21" column="49" selection-start-line="21" selection-end-line="21" selection-end-column="49" />
           <folding>
             <element signature="e#192#229#0" expanded="true" />
           </folding>
@@ -257,10 +273,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/trial3_out.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-455404" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trial1_out.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-405433" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/trial1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-779">
-          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+        <state relative-caret-position="242">
+          <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
           <folding>
             <element signature="e#192#229#0" expanded="true" />
           </folding>
@@ -269,8 +295,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cifar-10-baseline.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+        <state relative-caret-position="57">
+          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
           <folding>
             <element signature="e#192#229#0" expanded="true" />
           </folding>
