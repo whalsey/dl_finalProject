@@ -129,7 +129,7 @@ x_test /= 255
 
 final_model.fit(x_train, y_train,
                batch_size=batch_size,
-               epochs=30,
+               epochs=100,
                validation_data=(x_test, y_test),
                shuffle=True)
 
