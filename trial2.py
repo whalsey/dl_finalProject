@@ -86,7 +86,7 @@ mnist_img = generator_model(seed)
 augment = latent_model(mnist_img)
 
 
-concat = Concatenate(-1)([latent, augment])
+concat = Concatenate(-1)([latent, seed, augment])
 
 cifar_10_2 = Sequential()
 cifar_10_2.add(Dropout(0.5))
