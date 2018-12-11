@@ -26,7 +26,7 @@ num_classes = 10
 epochs = 100
 data_augmentation = True
 num_predictions = 20
-model_name = 'mnemonic_model2_2.h5'
+model_name = 'mnemonic_model2_3.h5'
 
 # The data, split between train and test sets:
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
