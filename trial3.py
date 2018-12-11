@@ -26,7 +26,7 @@ num_classes = 10
 epochs = 100
 data_augmentation = True
 num_predictions = 20
-model_name = 'mnemonic_model3.h5'
+model_name = 'mnemonic_model3_2.h5'
 
 # The data, split between train and test sets:
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
@@ -77,7 +77,8 @@ left_split.add(Activation('relu'))
 
 right_split = Sequential()
 right_split.add(Dense(latent_seed_dim))
-right_split.add(Activation('tanh'))
+right_split.add(Activation('relu'))
+right_split.add(BatchNormalization(momentum=80))
 
 seed = right_split(temporary)
 latent = left_split(temporary)

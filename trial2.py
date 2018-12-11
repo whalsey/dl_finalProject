@@ -26,7 +26,7 @@ num_classes = 10
 epochs = 100
 data_augmentation = True
 num_predictions = 20
-model_name = 'mnemonic_model2.h5'
+model_name = 'mnemonic_model2_2.h5'
 
 # The data, split between train and test sets:
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
@@ -45,12 +45,6 @@ img_shape = (img_rows, img_cols, channels)
 
 img = Input(shape=img_shape)
 
-latent_seed_dim = 512
-
-latent_augment_dim = latent_seed_dim + 128
-# latent_augment_dim = latent_seed_dim + 10
-
-
 # FIRST PORTION OF CNN
 cifar_10_1 = Sequential()
 cifar_10_1.add(Conv2D(32, (3, 3), padding='same',
@@ -68,10 +62,14 @@ cifar_10_1.add(Activation('relu'))
 cifar_10_1.add(MaxPooling2D(pool_size=(2, 2)))
 cifar_10_1.add(Dropout(0.25))
 cifar_10_1.add(Flatten())
-cifar_10_1.add(Dense(latent_seed_dim))
+cifar_10_1.add(Dense(512))
 cifar_10_1.add(Activation('relu'))
 
-latent_seed = cifar_10_1(img)
+prep_step = Sequential()
+prep_step.add(BatchNormalization(momentum=80))
+
+latent = cifar_10_1(img)
+seed = prep_step(latent)
 
 # GENERATOR
 tmp = os.path.join(save_dir, 'generator.h5')
@@ -84,13 +82,9 @@ latent_model = load_model(tmp)
 latent_model.trainable = False
 
 # MNEMONIC DEVICE
-mnist_img = generator_model(latent_seed)
+mnist_img = generator_model(seed)
 augment = latent_model(mnist_img)
-# mnemonic_model = Model(inputs=latent_seed,
-#                        outputs=augment)
 
-# augmenter_model = Model(inputs=img,
-#                         output=augment)
 
 concat = Concatenate(-1)([latent_seed, augment])
 
@@ -110,8 +104,8 @@ opt = keras.optimizers.rmsprop(lr=0.0001, decay=1e-6)
 
 # Let's train the model using RMSprop
 final_model.compile(loss='categorical_crossentropy',
-                   optimizer=opt,
-                   metrics=['accuracy'])
+                    optimizer=opt,
+                    metrics=['accuracy'])
 
 x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
@@ -119,10 +113,10 @@ x_train /= 255
 x_test /= 255
 
 final_model.fit(x_train, y_train,
-               batch_size=batch_size,
-               epochs=epochs,
-               validation_data=(x_test, y_test),
-               shuffle=True)
+                batch_size=batch_size,
+                epochs=epochs,
+                validation_data=(x_test, y_test),
+                shuffle=True)
 
 # Save model and weights
 if not os.path.isdir(save_dir):
@@ -135,3 +129,4 @@ print('Saved trained model at %s ' % model_path)
 scores = final_model.evaluate(x_test, y_test, verbose=1)
 print('Test loss:', scores[0])
 print('Test accuracy:', scores[1])
+
