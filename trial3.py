@@ -102,7 +102,7 @@ augment = latent_model(mnist_img)
 # augmenter_model = Model(inputs=img,
 #                         output=augment)
 
-concat = Concatenate(-1)([latent, augment])
+concat = Concatenate(-1)([latent, seed, augment])
 
 cifar_10_2 = Sequential()
 cifar_10_2.add(Dropout(0.5))
