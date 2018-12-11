@@ -1,5 +1,8 @@
 from __future__ import print_function, division
 
+import matplotlib
+matplotlib.use('Agg')
+
 from keras.datasets import mnist, cifar10
 from keras.layers import Input, Dense, Reshape, Flatten, Dropout
 from keras.layers import BatchNormalization, Activation, ZeroPadding2D
@@ -9,6 +12,7 @@ from keras.models import Sequential, Model
 from keras.optimizers import Adam
 
 import matplotlib.pyplot as plt
+
 
 import os
 
@@ -211,4 +215,4 @@ class DCGAN():
 
 if __name__ == '__main__':
     dcgan = DCGAN()
-    dcgan.train(epochs=4000, batch_size=128, save_interval=50)
+    dcgan.train(epochs=4000, batch_size=2048, save_interval=50)
