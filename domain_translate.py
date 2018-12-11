@@ -93,7 +93,7 @@ cifar_10_2.add(Dropout(0.5))
 cifar_10_2.add(Dense(num_classes))
 cifar_10_2.add(Activation('softmax'))
 
-output = cifar_10_2(concat)
+output = cifar_10_2(augment)
 
 final_model = Model(inputs=img,
                     outputs=output)
