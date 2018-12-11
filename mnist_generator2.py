@@ -86,7 +86,8 @@ class DCGAN():
 
         model.add(Flatten())
         model.add(Dense(self.latent_dim))
-        model.add(Activation('tanh'))
+        model.add(Activation('relu'))
+        model.add(BatchNormalization(momentum=0.8))
 
         model.add(Dense(128 * 7 * 7, activation="relu", input_dim=self.latent_dim))
         model.add(Reshape((7, 7, 128)))
