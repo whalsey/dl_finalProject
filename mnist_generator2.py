@@ -10,9 +10,14 @@ from keras.optimizers import Adam
 
 import matplotlib.pyplot as plt
 
+import os
+
 import sys
 
 import numpy as np
+
+save_dir = os.path.join('models', 'saved_models')
+
 
 class DCGAN():
     def __init__(self):
@@ -36,8 +41,8 @@ class DCGAN():
         # Build and compile the discriminator
         self.discriminator = self.build_discriminator()
         self.discriminator.compile(loss='binary_crossentropy',
-            optimizer=optimizer,
-            metrics=['accuracy'])
+                                   optimizer=optimizer,
+                                   metrics=['accuracy'])
 
         # Build the generator
         self.generator = self.build_generator()
@@ -94,7 +99,7 @@ class DCGAN():
 
         model.summary()
 
-        noise = Input(shape=(self.latent_dim,))
+        noise = Input(shape=self.other_shape)
         img = model(noise)
 
         return Model(noise, img)
@@ -107,7 +112,7 @@ class DCGAN():
         model.add(LeakyReLU(alpha=0.2))
         model.add(Dropout(0.25))
         model.add(Conv2D(64, kernel_size=3, strides=2, padding="same"))
-        model.add(ZeroPadding2D(padding=((0,1),(0,1))))
+        model.add(ZeroPadding2D(padding=((0, 1), (0, 1))))
         model.add(BatchNormalization(momentum=0.8))
         model.add(LeakyReLU(alpha=0.2))
         model.add(Dropout(0.25))
@@ -155,7 +160,7 @@ class DCGAN():
             # Sample noise and generate a batch of new images
             # noise = np.random.normal(0, 1, (batch_size, self.latent_dim))
             idx = np.random.randint(0, self.x_train.shape[0], batch_size)
-            noise = X_train[idx]
+            noise = self.x_train[idx]
             gen_imgs = self.generator.predict(noise)
 
             # Train the discriminator (real classified as ones and generated as zeros)
@@ -171,17 +176,20 @@ class DCGAN():
             g_loss = self.combined.train_on_batch(noise, valid)
 
             # Plot the progress
-            print ("%d [D loss: %f, acc.: %.2f%%] [G loss: %f]" % (epoch, d_loss[0], 100*d_loss[1], g_loss))
+            print("%d [D loss: %f, acc.: %.2f%%] [G loss: %f]" % (epoch, d_loss[0], 100 * d_loss[1], g_loss))
 
             # If at save interval => save generated image samples
             if epoch % save_interval == 0:
                 self.save_imgs(epoch)
 
-        self.generator.save('generator2.h5')
+        model_path3 = os.path.join(save_dir, 'generator2.h5')
+        self.generator.save(model_path3)
 
     def save_imgs(self, epoch):
         r, c = 5, 5
-        noise = np.random.normal(0, 1, (r * c, self.latent_dim))
+        samples = r * c
+        idx = np.random.randint(0, self.x_train.shape[0], samples)
+        noise = self.x_train[idx]
         gen_imgs = self.generator.predict(noise)
 
         # Rescale images 0 - 1
@@ -191,13 +199,16 @@ class DCGAN():
         cnt = 0
         for i in range(r):
             for j in range(c):
-                axs[i,j].imshow(gen_imgs[cnt, :,:,0], cmap='gray')
-                axs[i,j].axis('off')
+                axs[i, j].imshow(gen_imgs[cnt, :, :, 0], cmap='gray')
+                axs[i, j].axis('off')
                 cnt += 1
-        fig.savefig("images/mnist_%d.png" % epoch)
+
+        if not os.path.isdir("images2/"):
+            os.makedirs("images2/")
+        fig.savefig("images2/mnist_%d.png" % epoch)
         plt.close()
 
 
 if __name__ == '__main__':
     dcgan = DCGAN()
-    dcgan.train(epochs=4000, batch_size=32, save_interval=50)
+    dcgan.train(epochs=4000, batch_size=128, save_interval=50)
