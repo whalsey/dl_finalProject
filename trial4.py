@@ -78,7 +78,7 @@ left_split.add(Activation('relu'))
 right_split = Sequential()
 right_split.add(Dense(latent_seed_dim))
 right_split.add(Activation('relu'))
-ight_split.add(BatchNormalization(momentum=80))
+right_split.add(BatchNormalization(momentum=80))
 
 seed = right_split(temporary)
 latent = left_split(temporary)
