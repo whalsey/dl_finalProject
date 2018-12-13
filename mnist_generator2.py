@@ -38,6 +38,11 @@ class DCGAN():
 
         (self.x_train, self.y_train), (self.x_test, self.y_test) = cifar10.load_data()
 
+        self.x_train = self.x_train.astype('float32')
+        self.x_test = self.x_test.astype('float32')
+        self.x_train /= 255
+        self.x_test /= 255
+
         self.latent_dim = 512
 
         optimizer = Adam(0.0002, 0.5)

@@ -9,7 +9,7 @@ from keras.datasets import cifar10
 from keras.layers import Conv2D, MaxPooling2D
 
 from keras.layers import Input, Dense, Reshape, Flatten, Dropout, Concatenate
-from keras.layers import BatchNormalization, Activation, ZeroPadding2D
+from keras.layers import BatchNormalization, Activation, Lambda, ZeroPadding2D
 from keras.layers.advanced_activations import LeakyReLU
 from keras.layers.convolutional import UpSampling2D, Conv2D
 from keras.models import Sequential, Model
@@ -26,7 +26,7 @@ num_classes = 10
 epochs = 100
 data_augmentation = True
 num_predictions = 20
-model_name = 'mnemonic_model2_3.h5'
+model_name = 'mnemonic_model2_4.h5'
 
 # The data, split between train and test sets:
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
@@ -82,11 +82,16 @@ latent_model = load_model(tmp)
 latent_model.trainable = False
 
 # MNEMONIC DEVICE
-mnist_img = generator_model(seed)
-augment = latent_model(mnist_img)
+mnist_img = generator_model(seed) # output between -1 and 1
+
+prep_step2 = Sequential()
+prep_step2.add(Lambda(lambda x : x / 0.5 + 0.5))
+mnist_img = prep_step2(mnist_img)
+
+augment = latent_model(mnist_img) # input between 0 and 1
 
 
-concat = Concatenate(-1)([latent, seed, augment])
+concat = Concatenate(-1)([latent, augment])
 
 cifar_10_2 = Sequential()
 cifar_10_2.add(Dropout(0.5))

@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c80e7a31-5d8d-48a2-81e7-7d5b071739ee" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/generator_2_img_driver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/process_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trial1.py" beforeDir="false" afterPath="$PROJECT_DIR$/trial1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mnist_generator2.py" beforeDir="false" afterPath="$PROJECT_DIR$/mnist_generator2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trial2.py" beforeDir="false" afterPath="$PROJECT_DIR$/trial2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trial3.py" beforeDir="false" afterPath="$PROJECT_DIR$/trial3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trial4.py" beforeDir="false" afterPath="$PROJECT_DIR$/trial4.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +16,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="trial1.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="trial1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trial1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+            <state relative-caret-position="1380">
+              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+              <folding>
+                <element signature="e#192#229#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="trial2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trial2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+              <folding>
+                <element signature="e#192#229#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="trial3.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trial3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+              <folding>
+                <element signature="e#192#229#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="trial4.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/trial4.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
               <folding>
                 <element signature="e#192#229#0" expanded="true" />
               </folding>
@@ -40,8 +76,8 @@
       <file leaf-file-name="cifar-10-baseline.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cifar-10-baseline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+            <state relative-caret-position="318">
+              <caret line="67" column="13" lean-forward="true" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -49,8 +85,8 @@
       <file leaf-file-name="mnist_generator2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mnist_generator2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="148" column="12" selection-start-line="148" selection-start-column="12" selection-end-line="148" selection-end-column="12" />
+            <state relative-caret-position="272">
+              <caret line="42" column="27" lean-forward="true" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -87,12 +123,9 @@
       <list>
         <option value="$PROJECT_DIR$/mnist_classifier.py" />
         <option value="$PROJECT_DIR$/final_project.py" />
-        <option value="$PROJECT_DIR$/trial2.py" />
-        <option value="$PROJECT_DIR$/trial4.py" />
         <option value="$PROJECT_DIR$/trial6.py" />
         <option value="$PROJECT_DIR$/trial5.py" />
         <option value="$PROJECT_DIR$/mnist_generator.py" />
-        <option value="$PROJECT_DIR$/mnist_generator2.py" />
         <option value="$PROJECT_DIR$/trial7.py" />
         <option value="$PROJECT_DIR$/trial8.py" />
         <option value="$PROJECT_DIR$/overfit_test.py" />
@@ -101,6 +134,10 @@
         <option value="$PROJECT_DIR$/cifar-10-baseline.py" />
         <option value="$PROJECT_DIR$/generator_2_img_driver.py" />
         <option value="$PROJECT_DIR$/trial1.py" />
+        <option value="$PROJECT_DIR$/mnist_generator2.py" />
+        <option value="$PROJECT_DIR$/trial2.py" />
+        <option value="$PROJECT_DIR$/trial3.py" />
+        <option value="$PROJECT_DIR$/trial4.py" />
       </list>
     </option>
   </component>
@@ -215,9 +252,9 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.10769231" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22820513" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32948717" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32948717" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -406,13 +443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trial2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-775">
-          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trial3_out.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-455404" />
@@ -428,13 +458,6 @@
     <entry file="file://$PROJECT_DIR$/baseline_out.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-16798" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trial5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="119" column="5" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trial4_out.txt">
@@ -472,13 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="538">
           <caret line="55" column="10" selection-start-line="54" selection-start-column="17" selection-end-line="55" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trial6.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -542,23 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cifar-10-baseline.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mnist_generator2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="148" column="12" selection-start-line="148" selection-start-column="12" selection-end-line="148" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mnist_classifier.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
@@ -566,10 +565,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cifar-10-baseline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="67" column="13" lean-forward="true" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mnist_generator2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="42" column="27" lean-forward="true" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trial5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="79" column="29" lean-forward="true" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
+          <folding>
+            <element signature="e#192#229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trial6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-758">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/trial1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+        <state relative-caret-position="1380">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+          <folding>
+            <element signature="e#192#229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trial2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding>
+            <element signature="e#192#229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trial3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding>
+            <element signature="e#192#229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trial4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
           <folding>
             <element signature="e#192#229#0" expanded="true" />
           </folding>
