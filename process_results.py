@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-results = ["trial1_out.txt", "trial2_out.txt", "trial3_out.txt", "trial4_out.txt", "trial5_out.txt", "trial6_out.txt", "trial7_out.txt", "trial8_out.txt", "baseline_out.txt"]
+results = ["t1_sen_out.txt", "baseline_out.txt"]
 
 epoch = [i+1 for i in range(100)]
 
@@ -49,14 +49,14 @@ train_steps = []
 for j in range(len(results)):
     train_steps.append([i for i in range(len(train_loss[j]))])
 
-plt.plot(epoch, train_loss[0], epoch, train_loss[1], epoch, train_loss[2], epoch, train_loss[3], epoch, train_loss[4], epoch, train_loss[5], epoch, train_loss[6], epoch, train_loss[7], epoch, train_loss[8])
+plt.plot(epoch, train_loss[0], epoch, train_loss[1])#, epoch, train_loss[2], epoch, train_loss[3], epoch, train_loss[4], epoch, train_loss[5], epoch, train_loss[6], epoch, train_loss[7], epoch, train_loss[8])
 plt.show()
 
-plt.plot(epoch, train_acc[0], epoch, train_acc[1], epoch, train_acc[2], epoch, train_acc[3], epoch, train_acc[4], epoch, train_acc[5], epoch, train_acc[6], epoch, train_acc[7], epoch, train_acc[8])
+plt.plot(epoch, train_acc[0], epoch, train_acc[1])#, epoch, train_acc[2], epoch, train_acc[3], epoch, train_acc[4], epoch, train_acc[5], epoch, train_acc[6], epoch, train_acc[7], epoch, train_acc[8])
 plt.show()
 
-plt.plot(epoch, valid_loss[0], epoch, valid_loss[1], epoch, valid_loss[2], epoch, valid_loss[3], epoch, valid_loss[4], epoch, valid_loss[5], epoch, valid_loss[6], epoch, valid_loss[7], epoch, valid_loss[8])
+plt.plot(epoch, valid_loss[0], epoch, valid_loss[1])#, epoch, valid_loss[2], epoch, valid_loss[3], epoch, valid_loss[4], epoch, valid_loss[5], epoch, valid_loss[6], epoch, valid_loss[7], epoch, valid_loss[8])
 plt.show()
 
-plt.plot(epoch, valid_acc[0], epoch, valid_acc[1], epoch, valid_acc[2], epoch, valid_acc[3], epoch, valid_acc[4], epoch, valid_acc[5], epoch, valid_acc[6], epoch, valid_acc[7], epoch, valid_acc[8])
+plt.plot(epoch, valid_acc[0], epoch, valid_acc[1])#, epoch, valid_acc[2], epoch, valid_acc[3], epoch, valid_acc[4], epoch, valid_acc[5], epoch, valid_acc[6], epoch, valid_acc[7], epoch, valid_acc[8])
 plt.show()
