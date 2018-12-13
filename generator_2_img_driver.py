@@ -28,6 +28,9 @@ print(x_train.shape[0], 'train samples')
 print(x_test.shape[0], 'test samples')
 
 x_train = x_train.astype('float32')
+x_test = x_test.astype('float32')
+x_train /= 255
+x_test /= 255
 
 # GENERATOR
 tmp = os.path.join(save_dir, 'generator2.h5')
@@ -73,7 +76,7 @@ for i in range(10):
         my_output = 0.5 * my_output + 0.5
 
 
-        axs[0, ind].imshow((my_input/255.).astype('float32'))
+        axs[0, ind].imshow((my_input).astype('float32'))
         axs[0, ind].axis('off')
         axs[1, ind].imshow(my_output[:, :, 0], cmap='gray')
         axs[1, ind].axis('off')
