@@ -9,7 +9,7 @@ from keras.datasets import cifar10
 from keras.layers import Conv2D, MaxPooling2D
 
 from keras.layers import Input, Dense, Reshape, Flatten, Dropout, Concatenate
-from keras.layers import BatchNormalization, Activation, Lambda, ZeroPadding2D
+from keras.layers import BatchNormalization, Activation, Lambda, Multiply, ZeroPadding2D
 from keras.layers.advanced_activations import LeakyReLU
 from keras.layers.convolutional import UpSampling2D, Conv2D
 from keras.models import Sequential, Model
@@ -26,7 +26,7 @@ num_classes = 10
 epochs = 100
 data_augmentation = True
 num_predictions = 20
-model_name = 'mnemonic_model7.h5'
+model_name = 'sen_model1.h5'
 
 # The data, split between train and test sets:
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
@@ -44,12 +44,6 @@ channels = 3
 img_shape = (img_rows, img_cols, channels)
 
 img = Input(shape=img_shape)
-
-seed_dim = 512
-
-latent_augment_dim = seed_dim + 128
-# latent_augment_dim = latent_seed_dim + 10
-
 
 # FIRST PORTION OF CNN
 cifar_10_1 = Sequential()
@@ -71,10 +65,14 @@ cifar_10_1.add(Flatten())
 cifar_10_1.add(Dense(512))
 cifar_10_1.add(Activation('relu'))
 
+prep_step = Sequential()
+prep_step.add(BatchNormalization(momentum=80))
+
 latent = cifar_10_1(img)
+seed = prep_step(latent)
 
 # GENERATOR
-tmp = os.path.join(save_dir, 'generator2.h5')
+tmp = os.path.join(save_dir, 'generator.h5')
 generator_model = load_model(tmp)
 generator_model.trainable = False
 
@@ -84,7 +82,7 @@ latent_model = load_model(tmp)
 latent_model.trainable = False
 
 # MNEMONIC DEVICE
-mnist_img = generator_model(img) # output between -1 and 1
+mnist_img = generator_model(seed) # output between -1 and 1
 
 prep_step2 = Sequential()
 prep_step2.add(Lambda(lambda x : x / 0.5 + 0.5))
@@ -92,15 +90,25 @@ mnist_img = prep_step2(mnist_img)
 
 augment = latent_model(mnist_img) # input between 0 and 1
 
-
 concat = Concatenate(-1)([latent, augment])
+
+# SQUEEZE AND EXCITATION
+sen = Sequential()
+sen.add(Dense(256))
+sen.add(Activation('relu'))
+sen.add(Dense(640))
+sen.add(Activation('sigmoid'))
+
+sf = sen(concat)
+
+scaled = Multiply()([concat, sf])
 
 cifar_10_2 = Sequential()
 cifar_10_2.add(Dropout(0.5))
 cifar_10_2.add(Dense(num_classes))
 cifar_10_2.add(Activation('softmax'))
 
-output = cifar_10_2(concat)
+output = cifar_10_2(scaled)
 
 final_model = Model(inputs=img,
                     outputs=output)
@@ -121,7 +129,7 @@ x_test /= 255
 
 final_model.fit(x_train, y_train,
                batch_size=batch_size,
-               epochs=100,
+               epochs=epochs,
                validation_data=(x_test, y_test),
                shuffle=True)
 
