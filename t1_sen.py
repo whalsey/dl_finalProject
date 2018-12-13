@@ -96,7 +96,7 @@ concat = Concatenate(-1)([latent, augment])
 sen = Sequential()
 sen.add(Dense(256))
 sen.add(Activation('relu'))
-sen.add(Dense(640))
+sen.add(Dense(522))
 sen.add(Activation('sigmoid'))
 
 sf = sen(concat)

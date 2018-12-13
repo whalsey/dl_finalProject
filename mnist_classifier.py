@@ -13,6 +13,10 @@ from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
 
+import os
+
+save_dir = os.path.join('models', 'saved_models')
+
 batch_size = 128
 num_classes = 10
 epochs = 12
@@ -45,18 +49,16 @@ y_train = keras.utils.to_categorical(y_train, num_classes)
 y_test = keras.utils.to_categorical(y_test, num_classes)
 
 model = Sequential()
-model.add(Conv2D(32, kernel_size=(3, 3),
-                 activation='relu',
-                 input_shape=input_shape))
+model.add(Conv2D(32, kernel_size=(3, 3),activation='relu',input_shape=input_shape))
 model.add(Conv2D(64, (3, 3), activation='relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Dropout(0.25))
 model.add(Flatten())
-model.add(Dense(128, activation='relu', layer_name='my_layer1'))
+model.add(Dense(128, activation='relu', name='my_layer1'))
 model.add(Dropout(0.5))
-model.add(Dense(num_classes, activation='softmax', layer_name='my_layer2'))
+model.add(Dense(num_classes, activation='softmax', name='my_layer2'))
 
-layer_name = 'my_layer2'
+layer_name = 'my_layer1'
 intermediate_layer_model = Model(inputs=model.input,
                                  outputs=model.get_layer(layer_name).output)
 
@@ -69,9 +71,16 @@ model.fit(x_train, y_train,
           epochs=epochs,
           verbose=1,
           validation_data=(x_test, y_test))
+
 score = model.evaluate(x_test, y_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
 
-intermediate_layer_model.save('latent.h5')
+if not os.path.isdir(save_dir):
+    os.makedirs(save_dir)
+    model_path1 = os.path.join(save_dir, model_name1)
+    model_path2 = os.path.join(save_dir, model_name2)
+
+    intermediate_layer_model.save(model_path1)
+    model.save(model_path2)
 
